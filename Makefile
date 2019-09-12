@@ -6,7 +6,7 @@
 #    By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/06/13 15:55:07 by mwaterso     #+#   ##    ##    #+#        #
-#    Updated: 2019/09/12 05:30:18 by mwaterso    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/09/12 06:30:05 by mwaterso    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -20,7 +20,7 @@ OBJ = $(FILE:%.c=%.o)
 LIBFT = libft/libft.a
 MLX = minilibx_macos/libmlx.a
 CC = gcc
-CFLAGS =  -fsanitize=address -Wextra -Wall -Werror -framework OpenGL -framework AppKit
+CFLAGS = -Wextra -Wall -Werror -framework OpenGL -framework AppKit
 
 all: $(NAME)
 
