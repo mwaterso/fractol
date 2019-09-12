@@ -1,15 +1,15 @@
 # **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: mwaterso <mwaterso@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/06/13 15:55:07 by mwaterso          #+#    #+#              #
-#    Updated: 2019/09/05 19:06:26 by mwaterso         ###   ########.fr        #
-#                                                                              #
+#                                                           LE - /             #
+#                                                               /              #
+#    Makefile                                         .::    .:/ .      .::    #
+#                                                  +:+:+   +:    +:  +:+:+     #
+#    By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+      #
+#                                                  #+#   #+    #+    #+#       #
+#    Created: 2019/06/13 15:55:07 by mwaterso     #+#   ##    ##    #+#        #
+#    Updated: 2019/09/12 05:30:18 by mwaterso    ###    #+. /#+    ###.fr      #
+#                                                          /                   #
+#                                                         /                    #
 # **************************************************************************** #
-
 
 NAME = fractol
 FILE =  fct.c \
@@ -20,7 +20,7 @@ OBJ = $(FILE:%.c=%.o)
 LIBFT = libft/libft.a
 MLX = minilibx_macos/libmlx.a
 CC = gcc
-CFLAGS =  -Wextra -Wall -Werror -framework OpenGL -framework AppKit
+CFLAGS =  -fsanitize=address -Wextra -Wall -Werror -framework OpenGL -framework AppKit
 
 all: $(NAME)
 
