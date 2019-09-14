@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/09/05 19:17:40 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/12 05:51:52 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/14 16:26:46 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -62,6 +62,7 @@ typedef	struct		s_input
 	int		i;
 	int		zoom;
 	int		mode;
+	int		block;
 	int		(*fct)(double, double, struct	s_input *);
 	t_point p1;
 	t_point p2;

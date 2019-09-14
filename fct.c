@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/09/05 19:13:18 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/05 19:14:57 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/14 16:30:52 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -71,6 +71,7 @@ int		var_init(t_input *inputs)
 	inputs->p1.y = 2;
 	inputs->p2.x = 2;
 	inputs->p2.y = -2;
+	inputs->block = 0;
 	inputs->mlx_ad = mlx_init();
 	inputs->win_ad = mlx_new_window(inputs->mlx_ad, inputs->win_h,
 	inputs->win_w, "Fractol");

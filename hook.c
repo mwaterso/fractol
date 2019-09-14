@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/09/05 18:47:59 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/14 16:22:18 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/14 16:43:01 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,6 +16,7 @@
 int	keyboard(int key, t_input *inputs)
 {
 	int tmp;
+
 	if (key == KEY_ESCAPE)
 	{
 		mlx_destroy_window(inputs->mlx_ad, inputs->win_ad);
@@ -79,6 +80,8 @@ int	keyboard3(int key, t_input *inputs)
 		inputs->fct = &mandel;
 	if (key == KEY_B)
 		inputs->fct = &burningship;
+	if (key == KEY_SPACEBAR)
+		inputs->block = (inputs->block > 0 ? 0 : 1);
 	fractol(inputs);
 	return (1);
 }
@@ -105,8 +108,11 @@ int	mouse(int butt, int x, int y, t_input *data)
 
 int	mouse_track(int x, int y, t_input *inputs)
 {
-	inputs->mouse.x = (double)(x - inputs->win_w / 2) / (inputs->win_w / 2);
-	inputs->mouse.y = (double)(y - inputs->win_h / 2) / (inputs->win_h / 2);
+	if (inputs->block == 0)
+	{
+		inputs->mouse.x = (double)(x - inputs->win_w / 2) / (inputs->win_w / 2);
+		inputs->mouse.y = (double)(y - inputs->win_h / 2) / (inputs->win_h / 2);
+	}
 	fractol(inputs);
 	return (1);
 }
