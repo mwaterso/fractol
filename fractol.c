@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/03/23 16:38:10 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/12 06:29:53 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/14 16:19:51 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -40,7 +40,7 @@ int	colorv2(int ite, t_input *inputs)
 {
 	int		dr;
 	int		dg;
-	int		db;
+	//int		db;
 	float	i;
 
 	ite--;
@@ -48,8 +48,9 @@ int	colorv2(int ite, t_input *inputs)
 	if (ite == 1)
 		ite--;
 	i = (float)(ite) / (float)(inputs->i) * 256;
+	//return (0xFFFFFF);
 	return ((int)(((i * 65536) - ((int)(i * 65536))
-	% 65536) + ((i * 256) - ((int)(i * 256)) % 256) + db + inputs->color));
+	% 65536) + ((i * 256) - ((int)(i * 256)) % 256) + inputs->color));
 }
 
 int	fractol(t_input *inputs)

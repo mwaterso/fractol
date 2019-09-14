@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/09/05 18:47:59 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/12 05:41:52 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/14 16:22:18 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,6 +15,7 @@
 
 int	keyboard(int key, t_input *inputs)
 {
+	int tmp;
 	if (key == KEY_ESCAPE)
 	{
 		mlx_destroy_window(inputs->mlx_ad, inputs->win_ad);
@@ -30,26 +31,27 @@ int	keyboard(int key, t_input *inputs)
 	}
 	if (key == KEY_C)
 	{
+		tmp = inputs->color3;
 		inputs->color3 = inputs->color1;
 		inputs->color1 = inputs->color2;
-		inputs->color2 = inputs->color3;
+		inputs->color2 = tmp;
 	}
 	return (keyboard2(key, inputs));
 }
 
 int	keyboard2(int key, t_input *inputs)
 {
-	if (key == KEY_PAD_ADD)
+	if (key == KEY_UP)
 	{
 		inputs->p1.y += ((inputs->p2.y - inputs->p1.y) / 10);
 		inputs->p2.y += ((inputs->p2.y - inputs->p1.y) / 10);
 	}
-	if (key == KEY_PAD_SUB)
+	if (key == KEY_DOWN)
 	{
 		inputs->p1.y -= ((inputs->p2.y - inputs->p1.y) / 10);
 		inputs->p2.y -= ((inputs->p2.y - inputs->p1.y) / 10);
 	}
-	if (key == 123)
+	if (key == KEY_LEFT)
 	{
 		inputs->p1.x += ((inputs->p2.x - inputs->p1.x) / 10);
 		inputs->p2.x += ((inputs->p2.x - inputs->p1.x) / 10);
@@ -59,14 +61,14 @@ int	keyboard2(int key, t_input *inputs)
 
 int	keyboard3(int key, t_input *inputs)
 {
-	if (key == 124)
+	if (key == KEY_RIGHT)
 	{
 		inputs->p1.x -= ((inputs->p2.x - inputs->p1.x) / 10);
 		inputs->p2.x -= ((inputs->p2.x - inputs->p1.x) / 10);
 	}
-	if (key == KEY_F)
+	if (key == KEY_PAD_ADD)
 		inputs->i += 10;
-	if (key == KEY_D)
+	if (key == KEY_PAD_SUB)
 	{
 		if (inputs->i > 10)
 			inputs->i -= 10;
