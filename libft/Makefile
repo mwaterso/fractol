@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                           LE - /             #
 #                                                               /              #
-#    makefile                                         .::    .:/ .      .::    #
+#    Makefile                                         .::    .:/ .      .::    #
 #                                                  +:+:+   +:    +:  +:+:+     #
-#    By: calin <calin@student.le-101.fr>            +:+   +:    +:    +:+      #
+#    By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/05 11:07:00 by calin        #+#   ##    ##    #+#        #
-#    Updated: 2019/02/13 11:31:36 by calin       ###    #+. /#+    ###.fr      #
+#    Updated: 2019/09/19 20:11:47 by mwaterso    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -83,9 +83,9 @@ SRC = 	ft_bzero.c \
 		ft_addline.c \
 		ft_2dstrdel.c \
 		ft_tablen.c \
-		ft_free_tabint.c \
+		ft_free_tabint.c
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:%.c=%.o)
 
 FLAG = -Wall -Wextra -Werror
 
