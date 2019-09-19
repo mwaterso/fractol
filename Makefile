@@ -6,7 +6,7 @@
 #    By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/06/13 15:55:07 by mwaterso     #+#   ##    ##    #+#        #
-#    Updated: 2019/09/12 06:30:05 by mwaterso    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/09/19 16:16:07 by mwaterso    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -20,17 +20,17 @@ OBJ = $(FILE:%.c=%.o)
 LIBFT = libft/libft.a
 MLX = minilibx_macos/libmlx.a
 CC = gcc
-CFLAGS = -Wextra -Wall -Werror -framework OpenGL -framework AppKit
+CFLAGS = -Wextra -Wall -Werror -o3
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 		make -C libft
 		make -C minilibx_macos
-		$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(MLX) -o $(NAME)
+		$(CC) $(CFLAGS) -framework OpenGL -framework AppKit $(OBJ) $(LIBFT) $(MLX) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 		rm -f $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/09/05 19:13:18 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/14 16:30:52 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/19 16:16:34 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -66,7 +66,10 @@ int		var_init(t_input *inputs)
 	inputs->win_h = 1000;
 	inputs->win_w = 1000;
 	inputs->zoom = 1;
-	inputs->i = 50;
+	inputs->color1 = 0;
+	inputs->color2 = 0x000991;
+	inputs->color3 = 0x9100f7;
+	inputs->i = 30;
 	inputs->p1.x = -2;
 	inputs->p1.y = 2;
 	inputs->p2.x = 2;

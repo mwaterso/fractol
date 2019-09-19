@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/09/11 18:05:26 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/12 05:36:47 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/19 14:45:24 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -47,7 +47,7 @@ int	burningship(double x, double y, t_input *inputs)
 	{
 		tmp = z.x;
 		z.x = z.x * z.x - z.y * z.y + x;
-		z.y = 2 * ABS(tmp * z.y) + y;
+		z.y = -2 * ABS(tmp * z.y) + y;
 	}
 	if (inputs->mode == 0)
 		return (color(i, inputs));

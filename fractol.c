@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/03/23 16:38:10 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/14 16:42:53 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/19 15:33:54 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -38,8 +38,6 @@ int	color(int ite, t_input *inputs)
 
 int	colorv2(int ite, t_input *inputs)
 {
-	int		dr;
-	int		dg;
 	float	i;
 
 	ite--;
@@ -84,11 +82,23 @@ int	main(int arc, char **arv)
 {
 	t_input inputs;
 
-	inputs.color1 = 0;
-	inputs.color2 = 0x000991;
-	inputs.color3 = 0x9100f7;
+	if (arc != 2)
+	{
+		ft_putstr("usage ./fractol julia/mandelbrot/burningship\n");
+		return (1);
+	}
+	if (!ft_strcmp(arv[1], "julia"))
+		inputs.fct = &julia;
+	else if (!ft_strcmp(arv[1], "mandelbrot"))
+		inputs.fct = &mandel;
+	else if (!ft_strcmp(arv[1], "burningship"))
+		inputs.fct = &burningship;
+	else
+	{
+		ft_putstr("usage ./fractol julia/mandelbrot/burningship\n");
+		return (1);
+	}
 	inputs.mode = 1;
-	inputs.fct = &mandel;
 	var_init(&inputs);
 	fractol(&inputs);
 	mlx_mouse_hook(inputs.win_ad, &mouse, &inputs);

@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/09/05 18:47:59 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/14 16:43:01 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/19 14:57:42 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -88,6 +88,8 @@ int	keyboard3(int key, t_input *inputs)
 
 int	mouse(int butt, int x, int y, t_input *data)
 {
+	(void)x;
+	(void)y;
 	if (butt == 4)
 	{
 		data->p1.y -= ((data->p2.y - data->p1.y) / 10);
